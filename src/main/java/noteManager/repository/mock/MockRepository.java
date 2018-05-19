@@ -13,15 +13,16 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
 public class MockRepository implements NoteRepository {
-    private static Map<Integer, Note> notes = new HashMap<>();
-    private static AtomicInteger incr = new AtomicInteger();
+    private Map<Integer, Note> notes = new HashMap<>();
+    private AtomicInteger incr = new AtomicInteger();
 
-    static {
+    {
         notes.put(incr.getAndIncrement(), new Note(incr.get(), "Бег", "Пробежка в парке", LocalDateTime.now(), false));
         notes.put(incr.getAndIncrement(), new Note(incr.get(), "Ресторан", "Пойти на свидание в ресторан", LocalDateTime.now(), false));
         notes.put(incr.getAndIncrement(), new Note(incr.get(), "Счета", "Отралить счета", LocalDateTime.now(), false));
         notes.put(incr.getAndIncrement(), new Note(incr.get(), "Фильм", "Посмотреть дедпул2", LocalDateTime.now(), false));
     }
+
 
     @Override
     public Note save(Note note) {
@@ -36,7 +37,7 @@ public class MockRepository implements NoteRepository {
 
     @Override
     public boolean delete(int id) {
-        return notes.remove(get(id)) != null;
+        return notes.remove(id) != null;
     }
 
     @Override
