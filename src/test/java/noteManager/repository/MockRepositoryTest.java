@@ -2,6 +2,7 @@ package noteManager.repository;
 
 import noteManager.modal.Note;
 import noteManager.repository.mock.MockRepository;
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -11,13 +12,18 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.time.LocalDateTime;
 
 public class MockRepositoryTest {
-
+    private static  ConfigurableApplicationContext app;
     private static MockRepository repository;
 
     @BeforeClass
     public static void set(){
-        ConfigurableApplicationContext app = new ClassPathXmlApplicationContext("spring/spring-app.xml");
+        app = new ClassPathXmlApplicationContext("spring/spring-app.xml");
         repository = app.getBean(MockRepository.class);
+    }
+
+    @AfterClass
+    public static void destroy() {
+        app.close();
     }
 
 
