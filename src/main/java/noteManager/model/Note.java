@@ -13,10 +13,13 @@ import java.util.Objects;
 @Table(name = "notes")
 public class Note {
 
+    public static final int START_SEQ = 100000;
+
     public static final String ALL_SORTED = "Note.getAll";
     public static final String DELETE = "Note.delete";
 
     @Id
+    @SequenceGenerator(name = "global_seq", sequenceName = "global_seq", allocationSize = 1, initialValue = START_SEQ)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "global_seq")
     private Integer id;
 
