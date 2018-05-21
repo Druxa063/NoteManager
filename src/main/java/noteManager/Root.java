@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Root {
     public static void main(String[] args) {
-        try (ConfigurableApplicationContext app = new ClassPathXmlApplicationContext("spring/spring-app.xml")){
+        try (ConfigurableApplicationContext app = new ClassPathXmlApplicationContext("spring/spring-app.xml", "spring/spring-db.xml")){
             NoteController controller = app.getBean(NoteController.class);
             controller.getAll().forEach(System.out::println);
         }

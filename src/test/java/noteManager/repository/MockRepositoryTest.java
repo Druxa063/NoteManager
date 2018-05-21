@@ -17,7 +17,7 @@ public class MockRepositoryTest {
 
     @BeforeClass
     public static void set(){
-        app = new ClassPathXmlApplicationContext("spring/spring-app.xml");
+        app = new ClassPathXmlApplicationContext("spring/spring-app.xml", "spring-mock.xml");
         repository = app.getBean(MockRepository.class);
     }
 
