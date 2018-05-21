@@ -1,6 +1,6 @@
 package noteManager.repository;
 
-import noteManager.modal.Note;
+import noteManager.model.Note;
 import noteManager.repository.mock.MockRepository;
 import org.junit.AfterClass;
 import org.junit.Assert;

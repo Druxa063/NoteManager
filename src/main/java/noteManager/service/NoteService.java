@@ -1,6 +1,6 @@
 package noteManager.service;
 
-import noteManager.modal.Note;
+import noteManager.model.Note;
 
 import java.util.List;
 

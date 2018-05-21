@@ -1,13 +1,38 @@
-package noteManager.modal;
+package noteManager.model;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@NamedQueries({
+        @NamedQuery(name = Note.DELETE, query = "DELETE FROM Note n WHERE n.id=:id"),
+        @NamedQuery(name = Note.ALL_SORTED, query = "SELECT n FROM Note n ORDER BY n.dateTime DESC")
+})
+@Entity
+@Table(name = "notes")
 public class Note {
+
+    public static final String ALL_SORTED = "Note.getAll";
+    public static final String DELETE = "Note.delete";
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "global_seq")
     private Integer id;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "description")
+    @NotNull
     private String description;
+
+    @Column(name = "date_time")
+    @NotNull
     private LocalDateTime dateTime;
+
+    @Column(name = "made")
+    @NotNull
     private boolean made;
 
     public Note(){}

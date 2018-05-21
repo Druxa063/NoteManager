@@ -1,6 +1,6 @@
 package noteManager.service;
 
-import noteManager.modal.Note;
+import noteManager.model.Note;
 import noteManager.repository.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

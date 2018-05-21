@@ -2,7 +2,7 @@ package noteManager.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import noteManager.modal.Note;
+import noteManager.model.Note;
 import noteManager.service.NoteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
