@@ -9,8 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-@Controller
-public class NoteController {
+public abstract class NoteController {
     private final Logger log = LoggerFactory.getLogger(getClass());
 
     @Autowired

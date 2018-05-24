@@ -8,6 +8,5 @@
 
     <context:component-scan base-package="noteManager.service"/>
 
-    <context:component-scan base-package="noteManager.controller"/>
 
 </beans>

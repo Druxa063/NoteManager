@@ -27,9 +27,10 @@ public class NoteRepositoryImpl implements NoteRepository {
         }
     }
 
+    @Transactional
     @Override
     public boolean delete(int id) {
-        return em.createNamedQuery(Note.DELETE, Note.class)
+        return em.createNamedQuery(Note.DELETE)
                 .setParameter("id", id)
                 .executeUpdate() != 0;
     }
