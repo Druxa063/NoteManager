@@ -15,7 +15,7 @@ public abstract class NoteController {
     @Autowired
     private NoteService service;
 
-    public Note Create(Note note) {
+    public Note create(Note note) {
         log.debug("create {}", note);
         return service.create(note);
     }

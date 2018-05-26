@@ -1,5 +1,7 @@
 package noteManager.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
@@ -30,13 +32,13 @@ public class Note {
     @NotNull
     private String description;
 
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @Column(name = "date_time")
     @NotNull
     private LocalDateTime dateTime;
 
-    @Column(name = "made")
-    @NotNull
-    private boolean made;
+    @Column(name = "made", columnDefinition = "bool default false")
+    private boolean made = false;
 
     public Note(){}
 

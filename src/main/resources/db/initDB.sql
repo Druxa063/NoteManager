@@ -9,6 +9,6 @@ CREATE TABLE notes
     title VARCHAR(255),
     description VARCHAR(255)          NOT NULL,
     date_time TIMESTAMP DEFAULT now() NOT NULL,
-    made BOOLEAN DEFAULT FALSE        NOT NULL
+    made BOOLEAN DEFAULT FALSE
 );
 CREATE UNIQUE INDEX notes_id_uindex ON notes (id);
